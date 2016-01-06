@@ -7,18 +7,39 @@ public class Pair<L,R> {
 		this.right = right;
 	}
 
-	public L getLeft() { return left; }
-	public R getRight() { return right; }
+	public L getLeft() {
+		return left;
+	}
+	public R getRight() {
+		return right;
+	}
 
 	@Override
-	public int hashCode() { return left.hashCode() ^ right.hashCode(); }
+	public int hashCode() {
+		if(left != null && right != null)
+			return left.hashCode() ^ right.hashCode();
+		if(left != null)
+			return left.hashCode();
+		if(right != null)
+			return right.hashCode();
+		return 1;
+	}
 
 	@Override
-	public boolean equals(Object o) {
-		if (!(o instanceof Pair)) return false;
-		Pair pairo = (Pair) o;
-		return this.left.equals(pairo.getLeft()) &&
-			this.right.equals(pairo.getRight());
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Pair))
+			return false;
+		Pair otherPair = (Pair) obj;
+		if(this.left != null && this.right != null)
+			return this.left.equals(otherPair.getLeft()) &&
+				this.right.equals(otherPair.getRight());
+		if(this.left != null)
+			return this.left.equals(otherPair.getLeft()) &&
+				otherPair.getRight() == null;
+		if(this.right != null)
+			return otherPair.getLeft() == null &&
+				this.right.equals(otherPair.getRight());
+		return otherPair.getLeft() == null && otherPair.getRight() == null;
 	}
 }
 
