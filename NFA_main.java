@@ -20,7 +20,7 @@ public class NFA_main{
 		Delta.put(new Pair<>(2, '0'), new HashSet<Integer>(Arrays.asList(3)));
 		Delta.put(new Pair<>(2, '1'), new HashSet<Integer>(Arrays.asList(3)));
 
-		NFA machineN2 = new NFA(Q, Alphabet, Delta, QInit, FinalQ);
+		Automaton machineN2 = new NFA(Q, Alphabet, Delta, QInit, FinalQ);
 
 		// Introduction to the Theory of Computation, 1.2 NFA N1
 		Delta.clear();
@@ -32,7 +32,7 @@ public class NFA_main{
 		Delta.put(new Pair<>(3, '0'), new HashSet<Integer>(Arrays.asList(3)));
 		Delta.put(new Pair<>(3, '1'), new HashSet<Integer>(Arrays.asList(3)));
 
-		NFA machineN1 = new NFA(Q, Alphabet, Delta, QInit, FinalQ);
+		Automaton machineN1 = new NFA(Q, Alphabet, Delta, QInit, FinalQ);
 
 		if(machineN1.accept("hello"))
 			System.out.printf("N1 accept hello\n");
