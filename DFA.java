@@ -22,10 +22,10 @@ public class DFA{
 	boolean accept(String s){
 		int q = QInit;
 		for(char choose: s.toCharArray()){
-			if(Delta.get(new Pair(q, choose)) == null)
+			if(Delta.get(new Pair<>(q, choose)) == null)
 				return false;
 			else
-				q = Delta.get(new Pair(q, choose));
+				q = Delta.get(new Pair<>(q, choose));
 		}
 		return FinalQ.contains(q);
 	}

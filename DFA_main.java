@@ -6,18 +6,18 @@ import java.util.HashMap;
 
 public class DFA_main{
 	public static void main(String[] s){
-		Set Q = new HashSet<Integer>(Arrays.asList(0, 1, 2));
-		Set FinalQ = new HashSet<Integer>(Arrays.asList(1, 2));
-		Set Alphabet = new HashSet<Character>(Arrays.asList('a', 'b'));
-		Map Delta = new HashMap<Pair<Integer, Character>, Integer>();
+		Set<Integer> Q = new HashSet<Integer>(Arrays.asList(0, 1, 2));
+		Set<Integer> FinalQ = new HashSet<Integer>(Arrays.asList(1, 2));
+		Set<Character> Alphabet = new HashSet<Character>(Arrays.asList('a', 'b'));
+		Map<Pair<Integer, Character>, Integer> Delta = new HashMap<Pair<Integer, Character>, Integer>();
 		int QInit = 0;
 
 		//(a|b)a*b*
-		Delta.put(new Pair(0, 'a'), 1);
-		Delta.put(new Pair(0, 'b'), 1);
-		Delta.put(new Pair(1, 'a'), 1);
-		Delta.put(new Pair(1, 'b'), 2);
-		Delta.put(new Pair(2, 'b'), 2);
+		Delta.put(new Pair<>(0, 'a'), 1);
+		Delta.put(new Pair<>(0, 'b'), 1);
+		Delta.put(new Pair<>(1, 'a'), 1);
+		Delta.put(new Pair<>(1, 'b'), 2);
+		Delta.put(new Pair<>(2, 'b'), 2);
 
 		DFA machine = new DFA(Q, Alphabet, Delta, QInit, FinalQ);
 
