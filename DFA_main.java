@@ -11,6 +11,8 @@ public class DFA_main{
 		Set Alphabet = new HashSet<Character>(Arrays.asList('a', 'b'));
 		Map Delta = new HashMap<Pair<Integer, Character>, Integer>();
 		int QInit = 0;
+
+		//(a|b)a*b*
 		Delta.put(new Pair(0, 'a'), 1);
 		Delta.put(new Pair(0, 'b'), 1);
 		Delta.put(new Pair(1, 'a'), 1);
@@ -19,11 +21,13 @@ public class DFA_main{
 
 		DFA machine = new DFA(Q, Alphabet, Delta, QInit, FinalQ);
 
-		if(machine.Accept("hello"))
-			System.out.printf("Accept hello\n");
-		if(machine.Accept("abaaa"))
-			System.out.printf("Accept abaaa\n");
-		if(machine.Accept("baaaab"))
-			System.out.printf("Accept baaab\n");
+		if(machine.accept("hello"))
+			System.out.printf("accept hello\n");
+		if(machine.accept("abaaa"))
+			System.out.printf("accept abaaa\n");
+		if(machine.accept("baaaab"))
+			System.out.printf("accept baaaab\n");
+		if(machine.accept("baaaabbbb"))
+			System.out.printf("accept baaaabbb\n");
 	}
 }

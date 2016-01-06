@@ -19,7 +19,7 @@ public class DFA{
 		this.FinalQ = new HashSet<Integer>(FinalQ);
 	}
 
-	boolean Accept(String s){
+	boolean accept(String s){
 		int q = QInit;
 		for(char choose: s.toCharArray()){
 			if(Delta.get(new Pair(q, choose)) == null)
