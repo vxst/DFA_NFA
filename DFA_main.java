@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class DFA_main{
-	public static void main(String[] s){
+	public static void main(String[] arguments){
 		Set<Integer> Q = new HashSet<Integer>(Arrays.asList(0, 1, 2));
 		Set<Integer> FinalQ = new HashSet<Integer>(Arrays.asList(1, 2));
 		Set<Character> Alphabet = new HashSet<Character>(Arrays.asList('a', 'b'));

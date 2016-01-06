@@ -19,9 +19,9 @@ public class DFA implements Automaton{
 		this.FinalQ = new HashSet<Integer>(FinalQ);
 	}
 
-	public boolean accept(String s){
+	public boolean accept(String input){
 		int q = QInit;
-		for(char choose: s.toCharArray()){
+		for(char choose: input.toCharArray()){
 			if(Delta.get(new Pair<>(q, choose)) == null)
 				return false;
 			else
