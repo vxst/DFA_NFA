@@ -19,7 +19,7 @@ public class DFA_main{
 		Delta.put(new Pair<>(1, 'b'), 2);
 		Delta.put(new Pair<>(2, 'b'), 2);
 
-		DFA machine = new DFA(Q, Alphabet, Delta, QInit, FinalQ);
+		Automaton machine = new DFA(Q, Alphabet, Delta, QInit, FinalQ);
 
 		if(machine.accept("hello"))
 			System.out.printf("accept hello\n");

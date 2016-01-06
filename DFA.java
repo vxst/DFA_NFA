@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 
-public class DFA{
+public class DFA implements Automaton{
 	private Set<Integer> Q;
 	private Set<Character> Alphabet;
 	private Map<Pair<Integer, Character>, Integer> Delta;
@@ -19,7 +19,7 @@ public class DFA{
 		this.FinalQ = new HashSet<Integer>(FinalQ);
 	}
 
-	boolean accept(String s){
+	public boolean accept(String s){
 		int q = QInit;
 		for(char choose: s.toCharArray()){
 			if(Delta.get(new Pair<>(q, choose)) == null)
